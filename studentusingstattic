@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+    static int rollNumber;   // shared by all objects
+    string name;
+    int marks;
+
+public:
+    Student() {
+        rollNumber++;          // each new object gets the next roll number
+    }
+
+    void setData(string n, int m) {
+        name = n;
+        marks = m;
+    }
+
+    void display() const {
+        cout << "Roll No: " << rollNumber << endl;
+        cout << "Name: " << name << endl;
+        cout << "Marks: " << marks << endl;
+    }
+
+    ~Student() {
+        cout << "Student with roll number " << rollNumber << " has been destroyed." << endl;
+    }
+};
+
+int Student::rollNumber = 0;
+
+int main() {
+    int totalStudents;
+
+    cout << "How many students? ";
+    cin >> totalStudents;
+
+    for (int i = 0; i < totalStudents; i++) {
+        Student s;
+        string studentName;
+        int studentMarks;
+
+        cout << "\nEnter name of student " << i + 1 << ": ";
+        cin >> studentName;
+
+        cout << "Enter marks of student " << i + 1 << ": ";
+        cin >> studentMarks;
+
+        s.setData(studentName, studentMarks);
+        s.display();
+    }
+
+    return 0;
+}
