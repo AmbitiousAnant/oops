@@ -174,8 +174,7 @@ int main() {
             default:
                 cout << "Invalid choice.\n";
         }
-    } while (choice != 4);
-
+    } while (choice != 4)
     while (first != nullptr) {
         Node* nodeToDelete = first;
         first = first->next;
