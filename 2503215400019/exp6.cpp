@@ -47,7 +47,7 @@ int main()
     s1.display();
 
     cout << "\nCreating s2" << endl;
-    Student s2(19, "Anant");
+    Student s2(19, "Suhani");
     s2.display();
 
     cout << "\nCreating s3 using copy" << endl;

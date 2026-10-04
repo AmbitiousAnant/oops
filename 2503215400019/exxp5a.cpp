@@ -20,7 +20,7 @@ public:
 
 int main()
 {
-    Student s1(19, "Anant");
+    Student s1(194, "Suhani");
 
     Student *p = &s1;
 
